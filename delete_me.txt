@@ -1,0 +1,25 @@
+Ideas for more streamlined graphics extraction:
+
+-target output image should be a complex-configurable object with multiple sub-elements
+-should contain:
+  -size
+  -fill color (bg)
+  -output format
+  -list of source configurations:
+    -x,y position on target image
+    -source encoding (e.g. 2bpp)
+    
+process of using the object:
+-create a 2D pixel array of `size`, prefilled with `fill color`
+-for each source config, call the decoder for the specific encoding
+  -every decoder takes source bytes, the target array and the starting x,y position and draws the bytes onto the target image
+-add utility functions that act on the pixel object:
+  -copy-paste with source & target x&y, width and height
+  -mirror with source & target x&y, width, height and mirror direction
+  
+  
+  C++ vs. Python:
+  -C++ needs to be compiled on 3 systems; both should run only in CL
+  -Python might *not* be too slow, depending on how big the games will be
+  -Python can integrate with other exporting features (later)
+  -Python has PIL library, problem finding cross-platform C++ libs for output formats
