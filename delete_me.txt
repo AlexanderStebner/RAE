@@ -1,13 +1,18 @@
 Ideas for more streamlined graphics extraction:
 
--target output image should be a complex-configurable object with multiple sub-elements
+-target output image should be a complex object with multiple sub-elements
 -should contain:
+  -object type (animation etc., extendable list)
+  -output data type (png, wav etc.)
+  -file name
+  -relative path
   -size
   -fill color (bg)
-  -output format
   -list of source configurations:
     -x,y position on target image
+    -color map
     -source encoding (e.g. 2bpp)
+    -list of post editing commands, e.g. copy or mirror-copy
     
 process of using the object:
 -create a 2D pixel array of `size`, prefilled with `fill color`
@@ -17,6 +22,17 @@ process of using the object:
   -copy-paste with source & target x&y, width and height
   -mirror with source & target x&y, width, height and mirror direction
   
+process inside decode function:
+-relevant json files are opened and split by array entry (each entry = 1 file); maybe with a small util
+-CL arguments can override some of the settings
+-for each entry (parsed json object) a relevant util has its "make()" function called
+  -e.g. imageUtil.make(json_object, bytes) (the game's bytes)
+  -the make function returns an internal object that can then still be converted to any output format
+  -inside the make function, a validator is called first
+  -then (for image) a base object is created on which all sub-images are drawn (by ref)
+  -in parallel all subimages are handled, each with their specific x,y position on target image, color map and encoding
+  -on the final image, all post editings are performed on-by-one
+-the final image object can then be converted to its output data type and returned as part of the file object list (which only needs data, file name and relative path)
   
   C++ vs. Python:
   -C++ needs to be compiled on 3 systems; both should run only in CL
