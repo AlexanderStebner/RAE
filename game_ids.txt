@@ -1,0 +1,3 @@
+# Gameboy Color
+# Zelda DX (USA)
+gbc/zelda_dx.json,134,5A454C444100000000000000000000803031031B0503
