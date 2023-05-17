@@ -1,3 +1,6 @@
+# Nintendo Entertainment System
+# Zelda 1 (USA)
+nes.zelda_1_us,M3vW8aEWPfMb8mM2ZViasA==
 # Gameboy Color
 # Zelda DX (USA)
-gbc/zelda_dx.json,134,5A454C444100000000000000000000803031031B0503
+gbc.zelda_dx_us,B8IRR5OGglBC77StMbtSXw==

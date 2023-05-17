@@ -1,0 +1,606 @@
+{
+  "title": "Zelda 1 (USA)",
+  "palettes": {
+    "0": {
+      "0x0": "000000",
+      "0x1": "FFFFFF",
+      "0x2": "59595f",
+      "0x3": "5511EE"
+    },
+    "1": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "CC8800",
+      "0x3": "EEAAAA"
+    },
+    "2": {
+      "0x0": "000000",
+      "0x1": "006600",
+      "0x2": "EEBB99",
+      "0x3": "5511EE"
+    },
+    "3": {
+      "0x0": "000000",
+      "0x1": "884400",
+      "0x2": "EEBB99",
+      "0x3": "5511EE"
+    },
+    "4": {
+      "0x0": "000000",
+      "0x1": "77BB00",
+      "0x2": "CC8800",
+      "0x3": "884400"
+    }
+  },
+  "assets": [
+    {
+      "target": "anim/link.png",
+      "type": "png",
+      "description": "Movement of Link, with shield, Magical Shield, no shield (up/down only), striking & picking up items",
+      "target_size": {
+        "w": 128,
+        "h": 48
+      },
+      "elements": {
+        "small shield, walk right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x808f",
+          "palette": "4"
+        },
+        "small shield, look right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x80cf",
+          "palette": "4"
+        },
+        "no shield, look down": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x810f",
+          "palette": "4"
+        },
+        "look up": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x814f",
+          "palette": "4"
+        },
+        "strike right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x818f",
+          "palette": "4"
+        },
+        "strike down": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x81cf",
+          "palette": "4"
+        },
+        "strike up": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x820f",
+          "palette": "4"
+        },
+        "big shield, look right": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x85cf",
+          "palette": "4"
+        },
+        "small shield, look down": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x860f",
+          "palette": "4"
+        },
+        "small shield, walk down": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x862f",
+          "palette": "4"
+        },
+        "big shield, look down": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x868f",
+          "palette": "4"
+        },
+        "pick up": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x4e44",
+          "palette": "4"
+        },
+        "big shield, walk right": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x4ec4",
+          "palette": "4"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "# small shield (d,u,l,r)",
+          "no shield, look down|0|0",
+          "no shield, look down|0|16|flip_h",
+          "small shield, look down|0|0",
+          "small shield, walk down|0|16",
+          "look up|0|32",
+          "look up|0|48|flip_h",
+          "small shield, look right|0|64|flip_h",
+          "small shield, walk right|0|80|flip_h",
+          "small shield, look right|0|96",
+          "# big shield",
+          "small shield, walk right|0|112",
+          "no shield, look down|16|0",
+          "no shield, look down|16|16|flip_h",
+          "big shield, look down|16|0",
+          "big shield, look down|16|16",
+          "look up|16|32",
+          "look up|16|48|flip_h",
+          "small shield, look right|16|64|flip_h",
+          "small shield, walk right|16|80|flip_h",
+          "big shield, look right|16|64|flip_h",
+          "big shield, walk right|16|80|flip_h",
+          "small shield, look right|16|96",
+          "small shield, walk right|16|112",
+          "big shield, look right|16|104",
+          "big shield, walk right|16|120",
+          "# others (strike, pick up sth.)",
+          "strike down|32|0",
+          "strike up|32|16",
+          "strike right|32|32|flip_h",
+          "strike right|32|48",
+          "no shield, look down|32|64",
+          "no shield, look down|32|80|flip_h",
+          "pick up|32|96",
+          "pick up|32|104|flip_h"
+        ]
+      }
+    },
+    {
+      "target": "anim/sword.png",
+      "type": "png",
+      "description": "default sword",
+      "target_size": {
+        "w": 64,
+        "h": 16
+      },
+      "elements": {
+        "up": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0x828f",
+          "palette": "4"
+        },
+        "right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x4ee4",
+          "palette": "4"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "up|0|4|flip_v",
+          "up|0|20",
+          "right|0|32|flip_h",
+          "right|0|48"
+        ]
+      }
+    },
+    {
+      "target": "anim/fire.png",
+      "type": "png",
+      "description": "burning fire",
+      "target_size": {
+        "w": 32,
+        "h": 16
+      },
+      "elements": {
+        "fire": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x864f",
+          "palette": "1"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "fire|0|0",
+          "fire|0|16|flip_h"
+        ]
+      }
+    },
+    {
+      "target": "anim/red_octorok.png",
+      "type": "png",
+      "description": "stone shooting enemy",
+      "target_size": {
+        "w": 128,
+        "h": 16
+      },
+      "elements": {
+        "down_1": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0xd38b",
+          "palette": "1"
+        },
+        "down_2": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0xd3ab",
+          "palette": "1"
+        },
+        "left_1": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0xd3cb",
+          "palette": "1"
+        },
+        "left_2": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0xd40b",
+          "palette": "1"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "down_1|0|0",
+          "down_1|0|8|flip_h",
+          "down_2|0|16",
+          "down_2|0|24|flip_h",
+          "down_1|0|32|flip_v",
+          "down_1|0|40|flip_h|flip_v",
+          "down_2|0|48|flip_v",
+          "down_2|0|56|flip_h|flip_v",
+          "left_1|0|64",
+          "left_2|0|80",
+          "left_1|0|96|flip_h",
+          "left_2|0|112|flip_h"
+        ]
+      }
+    },
+    {
+      "target": "tilesets/overworld.png",
+      "type": "png",
+      "description": "All overworld tiles",
+      "target_size": {
+        "w": 96,
+        "h": 112
+      },
+      "elements": {
+        "stairs_down": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xc94b",
+          "palette": "2"
+        },
+        "stairs_left": {
+          "module": "2bpp",
+          "template": "8x8-sprite",
+          "invisible_color": null,
+          "start": "0xc98b",
+          "palette": "3"
+        },
+        "stairs_right": {
+          "module": "2bpp",
+          "template": "8x8-sprite",
+          "invisible_color": null,
+          "start": "0xc99b",
+          "palette": "3"
+        },
+        "plank_brown": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xc9ab",
+          "palette": "3"
+        },
+        "plank_green": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xc9ab",
+          "palette": "2"
+        },
+        "water_nw": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xc9cb",
+          "palette": "3"
+        },
+        "empty": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0xc9eb",
+          "palette": "3"
+        },
+        "water_ne": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xca0b",
+          "palette": "3"
+        },
+        "water_sw": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xca2b",
+          "palette": "3"
+        },
+        "water_se": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "invisible_color": null,
+          "start": "0xca6b",
+          "palette": "3"
+        },
+        "desert": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xca8b",
+          "palette": "3"
+        },
+        "waterfall": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcadb",
+          "palette": "3"
+        },
+        "water_1": {
+          "module": "2bpp",
+          "template": "8x8-sprite",
+          "invisible_color": null,
+          "start": "0xcb4b",
+          "palette": "3"
+        },
+        "water_2": {
+          "module": "2bpp",
+          "template": "8x8-sprite",
+          "invisible_color": null,
+          "start": "0xcb9b",
+          "palette": "3"
+        },
+        "beach_nw": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcb1b",
+          "palette": "3"
+        },
+        "beach_ne": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcb3b",
+          "palette": "3"
+        },
+        "beach_sw": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcb7b",
+          "palette": "3"
+        },
+        "beach_se": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcb9b",
+          "palette": "3"
+        },
+        "mountain_brown": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcfcb",
+          "palette": "3"
+        },
+        "mountain_green": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcfcb",
+          "palette": "2"
+        },
+        "mountain_white": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcfcb",
+          "palette": "0"
+        },
+        "mountain_brown_top": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf2b",
+          "palette": "3"
+        },
+        "mountain_green_top": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf2b",
+          "palette": "2"
+        },
+        "mountain_white_top": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf2b",
+          "palette": "0"
+        },
+        "mountain_brown_top_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf0b",
+          "palette": "3"
+        },
+        "mountain_green_top_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf0b",
+          "palette": "2"
+        },
+        "mountain_white_top_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf0b",
+          "palette": "0"
+        },
+        "mountain_brown_top_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf4b",
+          "palette": "3"
+        },
+        "mountain_green_top_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf4b",
+          "palette": "2"
+        },
+        "mountain_white_top_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf4b",
+          "palette": "0"
+        },
+        "mountain_brown_bottom_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf8b",
+          "palette": "3"
+        },
+        "mountain_green_bottom_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf8b",
+          "palette": "2"
+        },
+        "mountain_white_bottom_left": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xcf8b",
+          "palette": "0"
+        },
+        "mountain_brown_bottom_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xd00b",
+          "palette": "3"
+        },
+        "mountain_green_bottom_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xd00b",
+          "palette": "2"
+        },
+        "mountain_white_bottom_right": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xd00b",
+          "palette": "0"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "# side tiles are created as a mix between both edges",
+          "beach_nw|8|0",
+          "beach_nw|0|0",
+          "beach_ne|0|16",
+          "beach_ne|0|24",
+          "beach_ne|8|32",
+          "beach_ne|0|32",
+          "beach_sw|24|0",
+          "beach_sw|32|8",
+          "beach_sw|32|0",
+          "beach_se|32|24",
+          "beach_se|24|32",
+          "beach_se|32|32",
+          "water_1|16|16",
+          "water_1|16|24",
+          "water_2|24|16",
+          "water_2|24|24",
+          "water_nw|0|48",
+          "water_ne|0|88",
+          "water_sw|32|48",
+          "water_se|32|88",
+          "empty|0|56",
+          "empty|0|64",
+          "empty|0|72",
+          "empty|0|80",
+          "empty|16|48",
+          "empty|16|56",
+          "empty|16|64",
+          "empty|16|72",
+          "empty|16|80",
+          "empty|16|88",
+          "empty|32|56",
+          "empty|32|64",
+          "empty|32|72",
+          "empty|32|80",
+          "# 6 random tiles",
+          "stairs_down|48|0",
+          "stairs_left|48|16",
+          "stairs_left|56|16",
+          "stairs_right|48|24",
+          "stairs_right|56|24",
+          "desert|48|32",
+          "plank_brown|64|0",
+          "plank_brown|64|8",
+          "plank_green|64|16",
+          "plank_green|64|24",
+          "waterfall|64|32",
+          "mountain_brown_top_left|48|48",
+          "mountain_brown_bottom_left|64|48",
+          "mountain_brown_top|48|64",
+          "mountain_brown|64|64",
+          "mountain_brown_top_right|48|80",
+          "mountain_brown_bottom_right|64|80",
+          "mountain_green_top_left|80|0",
+          "mountain_green_bottom_left|96|0",
+          "mountain_green_top|80|16",
+          "mountain_green|96|16",
+          "mountain_green_top_right|80|32",
+          "mountain_green_bottom_right|96|32",
+          "mountain_white_top_left|80|48",
+          "mountain_white_bottom_left|96|48",
+          "mountain_white_top|80|64",
+          "mountain_white|96|64",
+          "mountain_white_top_right|80|80",
+          "mountain_white_bottom_right|96|80"
+        ]
+      }
+    }
+  ]
+}
