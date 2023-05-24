@@ -1,0 +1,17 @@
+2a60927148abd1d33b818b535e306557
+::res://::1684868604
+alex.tscn::PackedScene::5073770836119958641::1684477260::0::1::::<><>::res://LevelCamera.gd<>uid://s8nimocdobyv<>uid://b751kd03n81av
+LevelCamera.gd::GDScript::-1::1684477260::0::1::::<>Camera2D<>::
+Link.gd::GDScript::-1::1684475830::0::1::::<>CharacterBody2D<>::
+link.tres::SpriteFrames::6452548802000107684::1684443518::0::1::::<><>::uid://dn8q31b481x07
+overworld_tileset.tres::TileSet::6467402424593347543::1684475822::0::1::::<><>::uid://cavi5w77uwo80
+player.tscn::PackedScene::4695991709963959829::1684477260::0::1::::<><>::res://Link.gd<>uid://ckvgw14vh4pdy
+tile_map.tscn::PackedScene::1332327910628654377::1684443518::0::1::::<><>::uid://cye4f5a6haru2
+::res://resources/::1684443518
+::res://resources/anim/::1684443518
+fire.png::CompressedTexture2D::6201972906686250209::1684443518::1684443518::1::::<><>::
+link.png::CompressedTexture2D::5518486737395375090::1684443518::1684443518::1::::<><>::
+red_octorok.png::CompressedTexture2D::4212444830050402228::1684443518::1684443518::1::::<><>::
+sword.png::CompressedTexture2D::4125755023884302053::1684443518::1684443518::1::::<><>::
+::res://resources/tilesets/::1684443518
+overworld.png::CompressedTexture2D::4816733816409722787::1684443518::1684443518::1::::<><>::
