@@ -71,9 +71,30 @@ def create_overworld_map(data):
     # TODO: make above efficient. Need to create own mapping of tile ids to tileset locations (0|1|4), not based on game.
     # Then create a map in code that maps game-tile-id + palette info (below) to final custom tile-id
 
+    # create custom tile ids (tile set, y, x)
+    tile_ids = []
+    for y in range(7):
+        for x in range(9):
+            tile_ids.append("0|{}|{}".format(y, x))
+    for y in range(6):
+        for x in range(7):
+            tile_ids.append("1|{}|{}".format(y, x))
+
+    # mapping of game-tile-id | color offset to custom tile-id
+    tile_mapping = {"27":""}
+
+    offset = -1
+    for y in range(16):
+        for x in range(8):
+            offset += 1
+            screen = screens[data[0x18590 + offset]]
+            outer_palette = data[0x18410 + offset] & 0x3
+            inner_palette = data[0x18490 + offset] & 0x3
+            print("")
+
     # get the screen ordering 0x18590
     for p_inx in range(0x18590, 0x18590 + 16 * 8):
-        print(str(int((data[p_inx] & 0x7f) / 128)) + " ", end="")
+        print(str(int(data[p_inx] & 0x7f)) + " ", end="")
         if (p_inx + 1) % 16 == 0:
             print("")
 
