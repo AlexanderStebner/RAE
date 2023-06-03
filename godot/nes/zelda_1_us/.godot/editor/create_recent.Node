@@ -1,6 +1,9 @@
-ColorRect
 Node
-SubViewport
+ColorRect
+StaticBody2D
 Node2D
+RigidBody2D
+CollisionShape2D
+SubViewport
 Sprite2D
 TileMap

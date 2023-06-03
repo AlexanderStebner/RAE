@@ -1,23 +1,23 @@
 extends Camera2D
 
-# Camera script follwing a target (usually the player)
-# This camera is snapped to a grid, therefore only moves when the character exits a screen.
+@export var speed: float = 200
+@export var screen_size = Vector2(256, 176)
+@export var hud_offset = Vector2(0, 48)
 
-@export var target : NodePath
-@export var speed : float = 1000
-@export var screen_size := Vector2(256, 224)
+@onready var sceneManager = get_node("../SceneManager")
+var player: Node = null
 
-@onready var Target = get_node_or_null(target)
+func _ready():
+	player = sceneManager.player
 
-func _physics_process(delta: float) -> void:
-	if not is_instance_valid(Target):
+func _physics_process(delta: float):
+	if player == null:
 		return
 	
 	# Actual movement
-	#var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT_IN)
-	#tween.tween_property(self, "global_position", desired_position(), align_time)
 	global_position = global_position.move_toward(desired_position(), delta * speed)
+	#TODO send signal to animate but not move
 
-# Calculating the gridnapped position
-func desired_position() -> Vector2:
-	return (Target.global_position / screen_size).floor() * screen_size + screen_size/2
+# Calculating the gridsnapped position
+func desired_position():
+	return (player.global_position / screen_size).floor() * screen_size + screen_size/2 - hud_offset/2

@@ -1,43 +1,60 @@
 extends Actor
 
+class_name Link
+
 ## running speed
-@export var speed = 50
+@export var speed = 80
+
+@export var inputSource: InputSource
+
+var directionMap = {InputSource.LEFT: Vector2.LEFT, InputSource.RIGHT: Vector2.RIGHT, 
+						InputSource.UP: Vector2.UP, InputSource.DOWN: Vector2.DOWN}
+
+var facing = Vector2.ZERO	
 
 func _ready():
 	set_facing(Vector2.DOWN)
-	$AnimationTree.get("parameters/playback").travel("Walk")
-	move_to(Vector2(1,2), func(x): pass, false)
-	
 	
 
 func _process(delta):
+	if inputSource == null:
+		return
+		
+	var hitButtons = inputSource.get_hit_buttons()
+	var downButtons = inputSource.get_held_buttons()
+
+	# Block movement if attacking
 	if $AnimationTree.get("parameters/playback").get_current_node() == "Attack":
 		return
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_left"):
-		velocity = Vector2.LEFT * speed
-	if Input.is_action_pressed("ui_right"):
-		velocity = Vector2.RIGHT * speed
-	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2.UP * speed
-	if Input.is_action_pressed("ui_down"):
-		velocity = Vector2.DOWN * speed
-	var attack = Input.is_action_just_pressed("Attack")
+	
+	var direction = Vector2.ZERO
+	if len(downButtons) > 0 and downButtons[0] in directionMap:
+		direction = directionMap[downButtons[0]]
+		var aligned = position_aligned_to_grid(direction)
+		if aligned != position:
+			teleport_to(aligned, func(ignore): return, true)
+		move_delta(direction, speed, delta)
 
+	var attack = InputSource.ATTACK in hitButtons
+
+	# Animations
 	if attack:
 		$AnimationTree.get("parameters/playback").travel("Attack")
-	elif velocity != Vector2.ZERO:
+	elif direction != Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("Walk")
-		set_facing(velocity)
+		set_facing(direction)
 	else:
 		$AnimationTree.get("parameters/playback").travel("Idle")
 	
-func set_facing(velocity):
-	$AnimationTree.set("parameters/Walk/blend_position", velocity)
-	$AnimationTree.set("parameters/Attack/blend_position", velocity)
+func set_facing(direction):
+	$AnimationTree.set("parameters/Walk/blend_position", direction)
+	$AnimationTree.set("parameters/Attack/blend_position", direction)
+	facing = direction
 	
-	move_and_slide()
-
-func test(callback: Callable):
-	print("Hallo")
-	callback.call("Done")
+	
+## align to grid (8x8 px), if changing direction
+func position_aligned_to_grid(new_direction):
+	#print(position)
+	if facing.x == new_direction.x or facing.y == new_direction.y:
+		return position
+	return position.snapped(Vector2(8, 8))
