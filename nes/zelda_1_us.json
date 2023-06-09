@@ -281,7 +281,7 @@
       "type": "png",
       "description": "overworld tiles without transparency",
       "target_size": {
-        "w": 144,
+        "w": 160,
         "h": 112
       },
       "elements": {
@@ -347,6 +347,13 @@
             "0",
             "3"
           ]
+        },
+        "black": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "start": "0x8a8f",
+          "invisible_color": null,
+          "palette": "3"
         },
         "water_ne": {
           "module": "2bpp",
@@ -636,7 +643,10 @@
           "plank/2|48|136",
           "waterfall|64|112",
           "empty/0|64|128",
-          "empty/0|64|136"
+          "empty/0|64|136",
+          "empty/3|0|144",
+          "empty/3|0|152",
+          "black/3|16|144"
         ]
       }
     },
@@ -654,14 +664,25 @@
           "template": "16x16-sprite",
           "start": "0xcecb",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "small_tree": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xce8b",
-          "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "grave": {
           "module": "2bpp",
@@ -675,21 +696,30 @@
           "template": "16x16-sprite",
           "start": "0xcd4b",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "tree_sw": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcd0b",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "tree_head": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcd8b",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "empty": {
           "module": "2bpp",
@@ -703,56 +733,110 @@
           "template": "16x16-sprite",
           "start": "0xcceb",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "tree_se": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcdcb",
           "invisible_color": "EEBB99",
-          "palettes": ["2","3"]
+          "palettes": [
+            "2",
+            "3"
+          ]
         },
         "dungeon_nw": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcc0b",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "dungeon_sw": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcc6b",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "dungeon_one_eye": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xd04b",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "dungeon_two_eyes": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xccab",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "dungeon_ne": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcbeb",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         },
         "dungeon_se": {
           "module": "2bpp",
           "template": "16x16-sprite",
           "start": "0xcc4b",
-          "invisible_colors": ["59595f","EEBB99","EEBB99"],
-          "palettes": ["0","2","3"]
+          "invisible_colors": [
+            "59595f",
+            "EEBB99",
+            "EEBB99"
+          ],
+          "palettes": [
+            "0",
+            "2",
+            "3"
+          ]
         }
       },
       "encoding": {
@@ -763,6 +847,7 @@
           "small_tree/3|0|16",
           "small_tree/2|16|16",
           "grave|0|32",
+          "small_tree/0|16|32",
           "tree_nw/3|32|0",
           "tree_sw/3|48|0",
           "tree_head/3|32|16",
@@ -775,7 +860,6 @@
           "empty|80|16",
           "tree_ne/2|64|32",
           "tree_se/2|80|32",
-
           "dungeon_nw/3|0|48",
           "dungeon_sw/3|16|48",
           "dungeon_one_eye/3|0|64",
@@ -784,7 +868,6 @@
           "empty|16|80",
           "dungeon_ne/3|0|96",
           "dungeon_se/3|16|96",
-
           "dungeon_nw/2|32|48",
           "dungeon_sw/2|48|48",
           "dungeon_one_eye/2|32|64",
@@ -793,7 +876,6 @@
           "empty|48|80",
           "dungeon_ne/2|32|96",
           "dungeon_se/2|48|96",
-
           "dungeon_nw/0|64|48",
           "dungeon_sw/0|80|48",
           "dungeon_one_eye/0|64|64",

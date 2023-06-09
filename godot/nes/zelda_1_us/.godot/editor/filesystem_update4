@@ -1,7 +1,0 @@
-res://alex.tscn
-res://overworld_tileset.tres
-res://player.tscn
-res://LevelCamera.gd
-res://SceneManager.gd
-res://tile_map.tscn
-res://overworld.tscn
