@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cej1i8vlpqjjl"]
 
-[ext_resource type="Script" path="res://SceneManager.gd" id="1_fvrui"]
-[ext_resource type="Script" path="res://InputSource.gd" id="2_un2et"]
-[ext_resource type="PackedScene" uid="uid://dr3q7o8c7tiae" path="res://OverworldTileMap.tscn" id="3_4isi7"]
-[ext_resource type="Script" path="res://LevelCamera.gd" id="4_256f6"]
-[ext_resource type="PackedScene" uid="uid://b22ipnuijqqew" path="res://scenes/playables/Link.tscn" id="5_lk1w7"]
+[ext_resource type="Script" path="res://SceneManager.gd" id="1_ibhcq"]
+[ext_resource type="Script" path="res://InputSource.gd" id="2_vikb0"]
+[ext_resource type="PackedScene" uid="uid://dr3q7o8c7tiae" path="res://OverworldTileMap.tscn" id="3_pxhxi"]
+[ext_resource type="Script" path="res://LevelCamera.gd" id="4_d4txw"]
+[ext_resource type="PackedScene" uid="uid://b22ipnuijqqew" path="res://scenes/playables/Link.tscn" id="5_fy7o6"]
 
 [node name="Level" type="Node"]
 
@@ -20,18 +20,19 @@ grow_vertical = 2
 color = Color(0.00784314, 0.00392157, 0, 1)
 
 [node name="SceneManager" type="Node" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("1_fvrui")
+script = ExtResource("1_ibhcq")
 player = NodePath("../Link")
 
 [node name="InputSource" type="Node" parent="."]
-script = ExtResource("2_un2et")
+script = ExtResource("2_vikb0")
 
-[node name="OverworldTileMap" parent="." instance=ExtResource("3_4isi7")]
+
+[node name="OverworldTileMap" parent="." instance=ExtResource("3_pxhxi")]
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(1920, 1296)
-script = ExtResource("4_256f6")
+script = ExtResource("4_d4txw")
 
-[node name="Link" parent="." node_paths=PackedStringArray("inputSource") instance=ExtResource("5_lk1w7")]
+[node name="Link" parent="." node_paths=PackedStringArray("inputSource") instance=ExtResource("5_fy7o6")]
 position = Vector2(1888, 1329)
 inputSource = NodePath("../InputSource")
