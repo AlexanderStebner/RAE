@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://b751kd03n81av"]
+[gd_scene load_steps=32 format=3 uid="uid://b22ipnuijqqew"]
 
-[ext_resource type="Script" path="res://Link.gd" id="1_d2gxk"]
-[ext_resource type="Texture2D" uid="uid://ckvgw14vh4pdy" path="res://resources/anim/link.png" id="2_tb58c"]
+[ext_resource type="Script" path="res://scenes/playables/Link.gd" id="1_4tgls"]
+[ext_resource type="Texture2D" uid="uid://ckvgw14vh4pdy" path="res://resources/anim/link.png" id="2_b1acr"]
 
 [sub_resource type="Animation" id="Animation_4uvr2"]
 length = 0.001
@@ -240,11 +240,13 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdhr"]
 size = Vector2(12, 16)
 
-[node name="Player" type="StaticBody2D"]
-script = ExtResource("1_d2gxk")
+[node name="Link" type="StaticBody2D" node_paths=PackedStringArray("inputSource")]
+collision_mask = 3
+script = ExtResource("1_4tgls")
+inputSource = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tb58c")
+texture = ExtResource("2_b1acr")
 centered = false
 hframes = 8
 vframes = 3

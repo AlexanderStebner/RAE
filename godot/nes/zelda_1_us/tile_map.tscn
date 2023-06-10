@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://s8nimocdobyv"]
-
-[ext_resource type="TileSet" uid="uid://cye4f5a6haru2" path="res://overworld_tileset.tres" id="1_y5u2g"]
-
-[node name="TileMap" type="TileMap"]
-scale = Vector2(8, 8)
-tile_set = ExtResource("1_y5u2g")
-format = 2

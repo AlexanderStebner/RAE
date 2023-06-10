@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cej1i8vlpqjjl"]
+
+[ext_resource type="Script" path="res://SceneManager.gd" id="1_fvrui"]
+[ext_resource type="Script" path="res://InputSource.gd" id="2_un2et"]
+[ext_resource type="PackedScene" uid="uid://dr3q7o8c7tiae" path="res://OverworldTileMap.tscn" id="3_4isi7"]
+[ext_resource type="Script" path="res://LevelCamera.gd" id="4_256f6"]
+[ext_resource type="PackedScene" uid="uid://b22ipnuijqqew" path="res://scenes/playables/Link.tscn" id="5_lk1w7"]
+
+[node name="Level" type="Node"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="ColorRect" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00784314, 0.00392157, 0, 1)
+
+[node name="SceneManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("1_fvrui")
+player = NodePath("../Link")
+
+[node name="InputSource" type="Node" parent="."]
+script = ExtResource("2_un2et")
+
+[node name="OverworldTileMap" parent="." instance=ExtResource("3_4isi7")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(1920, 1296)
+script = ExtResource("4_256f6")
+
+[node name="Link" parent="." node_paths=PackedStringArray("inputSource") instance=ExtResource("5_lk1w7")]
+position = Vector2(1888, 1329)
+inputSource = NodePath("../InputSource")

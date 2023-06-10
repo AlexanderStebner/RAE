@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr3q7o8c7tiae"]
+
+[ext_resource type="TileSet" uid="uid://cye4f5a6haru2" path="res://OverworldTileset.tres" id="1_4hdo3"]
+
+[node name="OverworldTileMap" type="TileMap"]
+tile_set = ExtResource("1_4hdo3")
+format = 2
+layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(%LAYER_0%)
+layer_1/name = "Objects"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(%LAYER_1%)

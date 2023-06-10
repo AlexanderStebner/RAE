@@ -1,7 +1,12 @@
 extends Camera2D
 
+## Screen transition speed
 @export var speed: float = 200
+
+## Pixel size of screen. (Also change viewport size in Project Settings)
 @export var screen_size = Vector2(256, 176)
+
+## Size of HUD at screen top (to transition screen when reaching HUD)
 @export var hud_offset = Vector2(0, 48)
 
 @onready var sceneManager = get_node("../SceneManager")
