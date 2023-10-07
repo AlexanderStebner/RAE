@@ -1,0 +1,6 @@
+/.idea/
+/output/
+*.deb
+/games/
+__pycache__/
+*/__pycache__/

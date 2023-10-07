@@ -16,7 +16,6 @@ func set_facing(direction):
 		$AnimationPlayer.play("up")
 	elif direction == Vector2.DOWN:
 		$AnimationPlayer.play("down")
-
 	remove_sword()
 	
 func remove_sword():

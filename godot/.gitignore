@@ -1,0 +1,6 @@
+# Add all asset file types, to keep the branch free of any generated assets
+# (locally one can continue working on the Godot project)
+*.json
+*.png
+*.wav
+*.mp3

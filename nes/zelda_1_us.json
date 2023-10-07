@@ -36,6 +36,72 @@
       "0x1": "77BB00",
       "0x2": "CC8800",
       "0x3": "884400"
+    },
+    "d1a": {
+      "0x0": "000000",
+      "0x1": "004466",
+      "0x2": "005588",
+      "0x3": "22bbcc"
+    },
+    "d1b": {
+      "0x0": "000000",
+      "0x1": "5511ee",
+      "0x2": "005588",
+      "0x3": "22bbcc"
+    },
+    "d2": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "5511ee",
+      "0x3": "7777ff"
+    },
+    "d3": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "006655",
+      "0x3": "22bb77"
+    },
+    "d4": {
+      "0x0": "000000",
+      "0x1": "5511ee",
+      "0x2": "666600",
+      "0x3": "bbaa00"
+    },
+    "d5": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "006600",
+      "0x3": "22bb22"
+    },
+    "d6": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "666600",
+      "0x3": "bbaa00"
+    },
+    "d7": {
+      "0x0": "000000",
+      "0x1": "5511ee",
+      "0x2": "006600",
+      "0x3": "22bb22"
+    },
+    "d8": {
+      "0x0": "000000",
+      "0x1": "7777ff",
+      "0x2": "aaaaaa",
+      "0x3": "ffffff"
+    },
+    "d9a": {
+      "0x0": "000000",
+      "0x1": "59595f",
+      "0x2": "aaaaaa",
+      "0x3": "ffffff"
+    },
+    "d9b": {
+      "0x0": "000000",
+      "0x1": "993300",
+      "0x2": "aaaaaa",
+      "0x3": "ffffff"
     }
   },
   "assets": [
@@ -273,6 +339,77 @@
           "left_2|0|80",
           "left_1|0|96|flip_h",
           "left_2|0|112|flip_h"
+        ]
+      }
+    },
+    {
+      "target": "sprites/octorok_stone.png",
+      "type": "png",
+      "description": "octorok's stone attack",
+      "target_size": {
+        "w": 8,
+        "h": 10
+      },
+      "elements": {
+        "stone": {
+          "module": "2bpp",
+          "template": "8x16-sprite",
+          "start": "0xd26b",
+          "palette": "4"
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "stone|-2|0"
+        ]
+      }
+    },
+    {
+      "target": "tilesets/dungeon.png",
+      "type": "png",
+      "description": "dungeon tiles without transparency",
+      "target_size": {
+        "w": 160,
+        "h": 160
+      },
+      "elements": {
+        "stairs_down": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xc12b",
+          "palettes": [
+            "d1a"
+          ]
+        },
+        "floor": {
+          "module": "2bpp",
+          "template": "16x16-sprite",
+          "invisible_color": null,
+          "start": "0xc16b",
+          "palettes": [
+            "d1a"
+          ]
+        }, "dirt": {
+           "module": "2bpp",
+          "template": "8x8-sprite",
+          "invisible_color": null,
+          "start": "0x8e0f",
+          "palettes": [
+            "d1a"
+          ]
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "stairs_down/d1a|0|0",
+          "floor/d1a|0|16",
+          "dirt/d1a|0|32",
+          "dirt/d1a|8|32",
+          "dirt/d1a|0|40",
+          "dirt/d1a|8|40"
         ]
       }
     },

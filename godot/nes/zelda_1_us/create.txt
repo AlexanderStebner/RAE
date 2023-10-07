@@ -4,4 +4,5 @@ CP anim/red_octorok.png resources/anim/red_octorok.png
 CP anim/sword.png resources/anim/sword.png
 CP tilesets/overworld.png resources/tilesets/overworld.png
 CP tilesets/overworld_objects.png resources/tilesets/overworld_objects.png
+CP sprites/octorok_stone.png resources/sprites/octorok_stone.png
 MAP maps/map_overworld.json OverworldTileMap.tscn

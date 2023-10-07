@@ -20,7 +20,7 @@ func _ready():
 	set_facing(Vector2.DOWN)
 	
 
-func _process(delta):
+func _process(delta) -> void:
 	if inputSource == null:
 		return
 		

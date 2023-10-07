@@ -1,8 +1,6 @@
-import io
 import os
 import sys
 import game_detector
-import nes.zelda_1_us
 import importlib
 
 

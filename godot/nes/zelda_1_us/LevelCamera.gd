@@ -15,7 +15,7 @@ var player: Node = null
 func _ready():
 	player = sceneManager.player
 
-func _physics_process(delta: float):
+func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	

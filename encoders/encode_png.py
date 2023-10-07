@@ -29,6 +29,8 @@ def encode(elements, asset, args):
                         x += 4
                         continue
                     else:
+                        if y >= len(data) or x >= len(data[y]):
+                            break
                         data[y][x] = int(pixel[0:2], 16)
                         data[y][x+1] = int(pixel[2:4], 16)
                         data[y][x+2] = int(pixel[4:6], 16)
