@@ -13,4 +13,4 @@ def detect(data):
     for config in configs:
         if config[1] == md5:
             return config[0]
-    exit("Unable to detect game.")
+    exit("Unable to detect game with md5: " + md5)

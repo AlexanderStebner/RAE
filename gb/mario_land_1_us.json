@@ -1,0 +1,39 @@
+{
+  "title": "Super Mario Land (World) (Rev A)",
+  "palettes": {
+    "0": {
+      "0x0": "ffffff",
+      "0x1": "aaaaaa",
+      "0x2": "555555",
+      "0x3": "000000"
+    }
+  },
+  "assets": [
+    {
+      "target": "tilesets/overworld.png",
+      "type": "png",
+      "description": "overworld tiles without transparency",
+      "target_size": {
+        "w": 160,
+        "h": 112
+      },
+      "elements": {
+        "test": {
+          "module": "2bpp",
+          "template": "8x8-gb",
+          "invisible_color": null,
+          "start": "0x9382",
+          "palettes": [
+            "0"
+          ]
+        }
+      },
+      "encoding": {
+        "module": "png",
+        "offsets": [
+          "test|0|0"
+        ]
+      }
+    }
+  ]
+}

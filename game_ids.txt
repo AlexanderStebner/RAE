@@ -4,3 +4,5 @@ nes.zelda_1_us,M3vW8aEWPfMb8mM2ZViasA==
 # Gameboy Color
 # Zelda DX (USA)
 gbc.zelda_dx_us,B8IRR5OGglBC77StMbtSXw==
+# Gameboy
+gb.mario_land_1_us,sln+tBgRx+Th3CABZ5hchA==

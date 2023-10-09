@@ -1,11 +1,11 @@
 import json
 import utils.config_handler
 
-inner_palette_start = 0x18490
+INNER_PALETTE_START = 0x18490
 
-outer_palette_start = 0x18410
+OUTER_PALETTE_START = 0x18410
 
-screen_ordering_start = 0x18590
+SCREEN_ORDERING_START = 0x18590
 
 COLUMN_GROUP_POINTER_TABLE = 0x19D1F
 COLUMN_GROUPS = 0x15428
@@ -106,9 +106,9 @@ def create_overworld_map(data):
     for screen_y in range(8):
         for screen_x in range(16):
             offset += 1
-            screen = screens[data[screen_ordering_start + offset] & 0x7F]
-            outer_palette = data[outer_palette_start + offset] & 0x3
-            inner_palette = data[inner_palette_start + offset] & 0x3
+            screen = screens[data[SCREEN_ORDERING_START + offset] & 0x7F]
+            outer_palette = data[OUTER_PALETTE_START + offset] & 0x3
+            inner_palette = data[INNER_PALETTE_START + offset] & 0x3
 
             for y in range(11):
                 for x in range(16):
